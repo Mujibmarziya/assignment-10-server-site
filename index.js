@@ -7,8 +7,16 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const app = express();
 const port = process.env.PORT || 5001;
-
-app.use(cors());
+app.use(cors({
+    origin: [
+      
+      'http://localhost:5173',
+      'https://art-and-craft-13e1a.web.app',
+    ],
+    credentials:true
+  
+  }));
+// app.use(cors());
 app.use(express.json());
 
 
@@ -67,7 +75,7 @@ app.put('/items/:id', async(req, res) => {
     const item = {
         $set: {
             item: updateditem.item, 
-            category: updateditem.category, 
+            subcategory_Name: updateditem.subcategory_Name, 
             price: updateditem.price, 
             rating: updateditem.rating, 
             ptime: updateditem.ptime, 
