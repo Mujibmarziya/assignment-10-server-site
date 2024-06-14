@@ -36,7 +36,7 @@ async function run() {
     const subCategoriesCollection = client.db('artDB').collection('subCategories');
 app.post('/items', async (req, res) => {
     const newitem = req.body;
-    // console.log(newuser);
+  
     const result = await itemsCollection.insertOne(newitem);
     console.log(result);
     res.send(result);
