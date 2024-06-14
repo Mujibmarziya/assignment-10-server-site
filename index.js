@@ -115,8 +115,7 @@ app.delete('/items/:id', async (req, res) => {
   }
 }
 run().catch(console.dir);
-// const usersCollection = client.db('taskDB').collection('user');
-// app.post('/users', async (req, res) => {
+
 
 
 
