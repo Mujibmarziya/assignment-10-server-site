@@ -122,9 +122,7 @@ run().catch(console.dir);
 //     const result = await usersCollection.insertOne(newuser);
 //     console.log(result);
 //     res.send(result);
-//   })
 
-// app.get('/users', async (req, res) => {
 
 
 
