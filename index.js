@@ -9,11 +9,11 @@ const app = express();
 const port = process.env.PORT || 5001;
 app.use(cors({
     origin: [
-      
-      'http://localhost:5173',
+      'http://localhost:5174',
+      'https://dreamy-lolly-588504.netlify.app',
       'https://art-and-craft-13e1a.web.app',
     ],
-    credentials:true
+    credentials:true,
   
   }));
 // app.use(cors());
@@ -38,7 +38,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     console.log("db connected")
     const itemsCollection = client.db('artDB').collection('items');
     const subCategoriesCollection = client.db('artDB').collection('subCategories');
@@ -115,7 +115,7 @@ app.delete('/items/:id', async (req, res) => {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
